@@ -20,3 +20,12 @@ function closeFullImage() {
 
   document.removeEventListener('keydown', onDocumentKeyDown);
 }
+
+{
+  document.removeEventListener('keydown', onDocumentKeyDown);
+
+  // Убрал класс чтобы контейнер с фотографиями позади не прокручивался при скролле
+  document.querySelector('body').classList.remove('modal-open');
+}
+
+// закрываем фото c клика по крестику
