@@ -77,3 +77,5 @@ const showPictures = (photos, showBigPicture) => {
   pictureContainer.appendChild(pictureFragment);
 };
 export {showPictures};
+
+//Просто
