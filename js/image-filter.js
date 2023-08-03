@@ -1,3 +1,4 @@
+
 import { debounce } from './functions.js';
 
 // Время задержки для устранения "дребезгов"
@@ -14,29 +15,31 @@ const Filter = {
 
 // Кнопки фильтрации
 const filterElement = document.querySelector('.img-filters');
-
 // Выбранный фильтр
 let currentFilter = '';
-
 // Ссылка на исходный массив фотографий, который фильтруется
 // Появляется в функции инициализации фильтра
 let photos;
-
 // Функция случайной сортировки элементов массива
 const sortRandom = () => Math.random() - 0.5;
-
 // Функция сортировки фотографий по убыванию количества комментариев
 const sortDiscussed = (photo1, photo2) =>
   photo2.comments.length - photo1.comments.length;
+=======
 
 /*
  * Фильтрация массива фотографий в соответствии с выбранным фильтром
  */
 const filterPhotos = () => {
+
+  // Создание копии массива фотографий, чтобы не испортить исходный
   let filteredPhotos = photos.slice();
+  // Если рандомный фильтр
   if (currentFilter === Filter.RANDOM) {
     filteredPhotos = filteredPhotos.sort(sortRandom).slice(0, RANDOM_PICTURES_COUNT);
   } else if (currentFilter === Filter.DISCUSSED) {
+    // Если сортировка по популярности (количеству комментариев)
+
     filteredPhotos = filteredPhotos.sort(sortDiscussed);
   }
   return filteredPhotos;
@@ -75,4 +78,6 @@ const setOnFilterClick = (showPictures, onPictureClick) => {
   });
 };
 
-export { initFilter, setOnFilterClick, filterPhotos };
+export {initFilter, setOnFilterClick, filterPhotos};
+=======
+

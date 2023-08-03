@@ -1,4 +1,5 @@
 import { randomDescription } from './data.js';
+import {setImgProps} from './functions.js';
 
 const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
@@ -18,9 +19,11 @@ otherPictures.forEach(({ url, description, likes, comments }) => {
 
 picturesContainer.appendChild(otherPicturesFragment);
 
-import { setImgProps } from './functions.js';
 
 const pictureContainer = document.querySelector('.pictures');
+=======
+import { setImgProps } from './functions.js';
+
 
 /*
  * Функция на основе шаблона #picture создает и возвращает DOM-элемент, соответствующей фотографии
@@ -33,7 +36,10 @@ const createPictureElement = () => {
 /*
  * Функция устанавливает значения свойст для созданной фотографии pictureElement
  */
-const processPicture = (pictureElement, { url, description, likes, comments }) => {
+
+const processPicture = (pictureElement, {url, description, likes, comments}) => {
+=======
+
   // Свойства самого изображения (источник и alt-текст)
   setImgProps(pictureElement.querySelector('.picture__img'), url, description);
   // Количество лайков
@@ -57,7 +63,11 @@ const createPicture = (photo, showBigPicture) => {
  * Нужна для того, чтобы не замножать картинки при изменении фильтра
  */
 const removePictures = () => {
+
+  // Ищем все отрисованные ранее картинки
   const pictures = pictureContainer.querySelectorAll('.picture');
+  // и удаляем их
+
   pictures.forEach((picture) => picture.remove());
 };
 
@@ -77,4 +87,6 @@ const showPictures = (photos, showBigPicture) => {
   pictureContainer.appendChild(pictureFragment);
 };
 
-export { showPictures };
+export {showPictures};
+
+
