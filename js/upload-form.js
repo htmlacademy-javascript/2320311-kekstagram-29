@@ -25,15 +25,15 @@ const hashtagFieldElement = document.querySelector('.text__hashtags');
   showSuccessMessage();
 };
 
-/*
- * Проверяет, относится ли файл с именем fileName к одному из заданных типов
- * графических файлов
- */
+
+//  Проверяет, относится ли файл с именем fileName к одному из заданных типов
+//  графических файлов
+
 const isImageFile = (fileName) => checkFileType(fileName, IMAGE_FILE_TYPES);
 
-/*
- * Обработчик события выбора файла
- */
+
+//  Обработчик события выбора файла
+
 function onFileInputChange() {
   // Получаем выбранный файл
   const file = fileFieldElement.files[0];
@@ -56,15 +56,15 @@ function onFileInputChange() {
   showModalOverlay();
 }
 
-/*
- * Обработчик события нажатия на кнопку "крестик" в форме
- */
+
+//  Обработчик события нажатия на кнопку "крестик" в форме
+
 function onCloseButtonClick() {
   hideModalOverlay();
 }
-/*
- * Обработчик события нажатия на клавишу Esc
- */
+
+//  Обработчик события нажатия на клавишу Esc
+
 function onEscKeyDown(evt) {
   // Проверяется нажатие клавиши Esc
   // При этом окно закрывается только в том случае,
@@ -74,9 +74,9 @@ function onEscKeyDown(evt) {
     hideModalOverlay();
   }
 }
-/*
- * Обработчик события submit формы редактирования изображения
- */
+
+  // Обработчик события submit формы редактирования изображения
+
 function onFormSubmit(evt) {
   evt.preventDefault();
   const isValid = pristine.validate();
@@ -88,21 +88,21 @@ function onFormSubmit(evt) {
       .finally(blockSubmitButton(false, SubmitButtonText.IDLE));
   }
 }
-/*
- * Обработчик нажания на кнопку увеличения масштаба
- */
+
+  // Обработчик нажания на кнопку увеличения масштаба
+
 function onEnlargeButtonClick() {
   incImageScale(SCALE_PERCENT_PER_STEP);
 }
-/*
- * Обработчик нажания на кнопку уменьшения масштаба
- */
+
+  // Обработчик нажания на кнопку уменьшения масштаба
+
 function onReduceButtonClick() {
   incImageScale(-SCALE_PERCENT_PER_STEP);
 }
-/*
- * Обработчик события изменения в форме
- */
+
+//  Обработчик события изменения в форме
+
 function onFormChange(evt) {
   // Отлавливаем изменение эффекта
   // и вызываем соответствующую функцию для настройки изображения
@@ -110,34 +110,34 @@ function onFormChange(evt) {
     changeEffect(evt.target.value);
   }
 }
-/*
- * Функция преобразует строку с хэштегами в массив для удобства работы
- */
+
+//  Функция преобразует строку с хэштегами в массив для удобства работы
+
 const getHashtagArrayFromStr = (hashtagStr) =>
   // Удаление концевых пробелов, выкидывание пустых значений
   hashtagStr.trim().split(HASHTAG_SEPARATOR).filter((str) => str.trim().length);
-/*
- * Проверка количества введенных хэштегов
- */
+
+//  Проверка количества введенных хэштегов
+
 const checkHashtagCount = (value) =>
   getHashtagArrayFromStr(value).length <= HASHTAG_MAX_COUNT;
-/*
- * Функция проверяет наличие дубликатов среди хэштегов
- */
+
+  // Функция проверяет наличие дубликатов среди хэштегов
+
 const checkHashtagDuplicates = (value) =>
   !checkArrayHasDuplicates(getHashtagArrayFromStr(value));
-/*
- * Функция проверки одного хэштега на соответствие маске и допустимым символам
- */
+
+  // Функция проверки одного хэштега на соответствие маске и допустимым символам
+
 const chechHashtagSymbols = (hashtag) => HASHTAG_REGEXP.test(hashtag);
-/*
- * Функция проверки массива хэштегов на соответствие маске и допустимым символам
- */
+
+//  Функция проверки массива хэштегов на соответствие маске и допустимым символам
+
 const chechHashtagArray = (value) =>
   getHashtagArrayFromStr(value).every(chechHashtagSymbols);
-/*
- * Для удобства настройка валидации формы вынесена в отдельную функцию
- */
+
+//  Для удобства настройка валидации формы вынесена в отдельную функцию
+
 const initFormValidation = () => {
   // Создание объекта pristine для проверки
   pristine = new Pristine(formElement, {

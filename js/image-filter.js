@@ -21,9 +21,9 @@ const sortRandom = () => Math.random() - 0.5;
 // Функция сортировки фотографий по убыванию количества комментариев
 const sortDiscussed = (photo1, photo2) =>
   photo2.comments.length - photo1.comments.length;
-/*
- * Фильтрация массива фотографий в соответствии с выбранным фильтром
- */
+
+  // Фильтрация массива фотографий в соответствии с выбранным фильтром
+
 const filterPhotos = () => {
   // Создание копии массива фотографий, чтобы не испортить исходный
   let filteredPhotos = photos.slice();
@@ -36,22 +36,22 @@ const filterPhotos = () => {
   }
   return filteredPhotos;
 };
-/*
- * Инициализация фильтра
- */
+
+  // Инициализация фильтра
+
 const initFilter = (loadedPhotos) => {
   filterElement.classList.remove('img-filters--inactive');
   photos = loadedPhotos;
   currentFilter = Filter.DEFAULT;
 };
-/*
- * Проверка щелчка по кнопкам выбора фильтра
- */
+
+//  Проверка щелчка по кнопкам выбора фильтра
+
 const isFilterClicked = (evt) =>
   evt.target.classList.contains('img-filters__button');
-/*
- * Установка обработчика клика по кнопкам фильтрации
- */
+
+//  Установка обработчика клика по кнопкам фильтрации
+
 const setOnFilterClick = (showPictures, onPictureClick) => {
   const debouncedShowPictures = debounce(showPictures, RERENDER_DELAY);
   filterElement.addEventListener('click', (evt) => {
