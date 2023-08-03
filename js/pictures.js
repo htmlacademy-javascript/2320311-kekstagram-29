@@ -78,4 +78,4 @@ const showPictures = (photos, showBigPicture) => {
 };
 export {showPictures};
 
-//Просто v
+//Просто da
