@@ -19,9 +19,12 @@ otherPictures.forEach(({ url, description, likes, comments }) => {
 
 picturesContainer.appendChild(otherPicturesFragment);
 
+
 const pictureContainer = document.querySelector('.pictures');
 
+
 //  Функция на основе шаблона #picture создает и возвращает DOM-элемент, соответствующей фотографии
+
 
 const createPictureElement = () => {
   const pictureTemplate = document.querySelector('#picture')
@@ -31,7 +34,10 @@ const createPictureElement = () => {
 
   // Функция устанавливает значения свойст для созданной фотографии pictureElement
 
+
 const processPicture = (pictureElement, {url, description, likes, comments}) => {
+=======
+
   // Свойства самого изображения (источник и alt-текст)
   setImgProps(pictureElement.querySelector('.picture__img'), url, description);
   // Количество лайков
@@ -55,9 +61,11 @@ const createPicture = (photo, showBigPicture) => {
 //  Нужна для того, чтобы не замножать картинки при изменении фильтра
 
 const removePictures = () => {
+
   // Ищем все отрисованные ранее картинки
   const pictures = pictureContainer.querySelectorAll('.picture');
   // и удаляем их
+
   pictures.forEach((picture) => picture.remove());
 };
 
@@ -76,6 +84,7 @@ const showPictures = (photos, showBigPicture) => {
   // Публикация новых
   pictureContainer.appendChild(pictureFragment);
 };
+
 export {showPictures};
 
 
