@@ -1,4 +1,4 @@
-import {showHideObject} from './functions.js';
+import {showHideObject} from './function.js';
 
 // Массив объектов - параметров эффектов
 const IMAGE_EFFECTS = [

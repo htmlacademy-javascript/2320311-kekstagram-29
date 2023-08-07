@@ -1,6 +1,6 @@
 import {setImgProps, isEscButton, showHideObject,
-  showHideModalElement} from './functions.js';
-  showHideModalElement, processEvents} from './functions.js';
+  showHideModalElement} from './function.js';
+ import {showHideModalElement, processEvents} from './function.js';
 
 // Константа задает количество комментариев,
 // выводимых при показе окна / одном нажатии на кнопку (не более чем)

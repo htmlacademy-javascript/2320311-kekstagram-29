@@ -1,5 +1,5 @@
 import {isEscButton, isFocusedElement, showHideModalElement,
-  checkArrayHasDuplicates, processEvents, checkFileType} from './functions.js';
+  checkArrayHasDuplicates, processEvents, checkFileType} from './function.js';
 
 import {setImageScale, incImageScale} from './image-scale.js';
 

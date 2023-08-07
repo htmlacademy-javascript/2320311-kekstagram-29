@@ -1,4 +1,4 @@
-import {parseDecimalInt} from './functions.js';
+import {parseDecimalInt} from './function.js';
 
 
 // Минимальный масштаб

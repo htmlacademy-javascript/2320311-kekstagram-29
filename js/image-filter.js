@@ -1,4 +1,4 @@
-import {debounce} from './functions.js';
+import {debounce} from './function.js';
 // Время задержки для устранения "дребезгов"
 const RERENDER_DELAY = 500;
 // Количество фотографий, отображаемых при выборе случайного фильтра

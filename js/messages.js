@@ -1,4 +1,4 @@
-import {isEscButton, processEvents} from './functions.js';
+import {isEscButton, processEvents} from './function.js';
 
 // Константа определяет время отображения собщения
 // об ошибке в верхней части экрана в милисекундах

@@ -1,5 +1,5 @@
 import { randomDescription } from './data.js';
-import {setImgProps} from './functions.js';
+import {setImgProps} from './function.js';
 
 const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
