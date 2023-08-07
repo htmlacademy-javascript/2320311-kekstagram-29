@@ -1,4 +1,5 @@
 import {isEscButton, isFocusedElement, showHideModalElement,
+
   checkArrayHasDuplicates, processEvents, checkFileType} from './function.js';
 
 import {setImageScale, incImageScale} from './image-scale.js';
@@ -6,6 +7,12 @@ import {setImageScale, incImageScale} from './image-scale.js';
 import {initImageEffects, addSliderEventListener, removeSliderEventListener,
   changeEffect} from './image-effect.js';
 import {showSuccessMessage, showErrorMessage} from './messages.js';
+
+  checkArrayHasDuplicates, processEvents, checkFileType} from './functions.js';
+
+
+
+
 
 import {sendData} from './data.js';
 
@@ -15,6 +22,7 @@ const IMAGE_FILE_TYPES = ['jpg', 'jpeg', 'png', 'gif'];
 // Хэштеги разделяются пробелами в списке
 const HASHTAG_SEPARATOR = ' ';
 // Максимальное количество хэштегов для одной фотографии
+
 const HASHTAG_MAX_COUNT = 5;
 // Регулярное выражение для проверки хэштега
 const HASHTAG_REGEXP = /^#[a-zа-яё0-9]{1,19}$/i;
@@ -29,6 +37,7 @@ const SubmitButtonText = {
   SENDING: 'Отправляю...'
 };
 // Количество процентов масштаба
+
 // за один шаг увеличения / уменьшения изображения
 const SCALE_PERCENT_PER_STEP = 25;
 
@@ -36,6 +45,7 @@ const fileFieldElement = document.querySelector('#upload-file');
 const overlayElement = document.querySelector('.img-upload__overlay');
 const formElement = document.querySelector('.img-upload__form');
 const hashtagFieldElement = document.querySelector('.text__hashtags');
+
 const commentFieldElement = document.querySelector('.text__description');
 const closeButtonElement = document.querySelector('#upload-cancel');
 const submitButtonElement = document.querySelector('.img-upload__submit');
@@ -108,6 +118,7 @@ const blockSubmitButton = (block, caption) => {
  */
 const sendDataSuccess = () => {
   hideModalOverlay();
+
   showSuccessMessage();
 };
 

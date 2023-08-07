@@ -1,5 +1,7 @@
 import { randomDescription } from './data.js';
+
 import {setImgProps} from './function.js';
+
 
 const picturesContainer = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
@@ -19,9 +21,12 @@ otherPictures.forEach(({ url, description, likes, comments }) => {
 
 picturesContainer.appendChild(otherPicturesFragment);
 
-const pictureContainer = document.querySelector('.pictures');
 
-//  Функция на основе шаблона #picture создает и возвращает DOM-элемент, соответствующей фотографии
+
+
+/*
+ * Функция на основе шаблона #picture создает и возвращает DOM-элемент, соответствующей фотографии
+ */
 
 const createPictureElement = () => {
   const pictureTemplate = document.querySelector('#picture')
@@ -29,9 +34,11 @@ const createPictureElement = () => {
   return pictureTemplate.cloneNode(true);
 };
 
+
   // Функция устанавливает значения свойст для созданной фотографии pictureElement
 
 const processPicture = (pictureElement, {url, description, likes, comments}) => {
+
   // Свойства самого изображения (источник и alt-текст)
   setImgProps(pictureElement.querySelector('.picture__img'), url, description);
   // Количество лайков
@@ -40,7 +47,9 @@ const processPicture = (pictureElement, {url, description, likes, comments}) => 
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
 };
 
+
 //  Функция на основе данных создает DOM-элемент фотографии.
+
 
 const createPicture = (photo, showBigPicture) => {
   const pictureElement = createPictureElement();
@@ -50,6 +59,7 @@ const createPicture = (photo, showBigPicture) => {
   });
   return pictureElement;
 };
+
 
 //  Удаляет опубликованные ранее картинки
 //  Нужна для того, чтобы не замножать картинки при изменении фильтра
@@ -66,6 +76,7 @@ const removePictures = () => {
 //  Через параметр photos передается массив данных о фотографиях,
 //  параметр showBigPicture - ссылка на функцию, вызываемую при клике на миниатюре.
 
+
 const showPictures = (photos, showBigPicture) => {
   const pictureFragment = document.createDocumentFragment();
   photos.forEach((photo) => {
@@ -76,6 +87,7 @@ const showPictures = (photos, showBigPicture) => {
   // Публикация новых
   pictureContainer.appendChild(pictureFragment);
 };
+
 export {showPictures};
 
 

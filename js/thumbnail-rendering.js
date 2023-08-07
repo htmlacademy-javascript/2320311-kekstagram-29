@@ -15,6 +15,10 @@ photoElement.addEventListener('click', (evt) => {
       const commentToShow = 5;
       commentBox.innerHTML = '';
       for (let i = 0; i <= comments.length; i++) {
+
+        // comments.forEach((commentData) => {
+        //   const {avatar, message, name} = commentData;
+
         const commentElement = document.querySelector('.social__comment').cloneNode(true);
         // заполняем данные для комментария
         commentElement.querySelector('img').src = comments[i].avatar;
