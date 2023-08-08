@@ -5,12 +5,10 @@ import {showPictures} from './pictures.js';
 import {showBigPicture} from './big-pictures.js';
 import {initUploadForm} from './upload-form.js';
 import {initFilter, setOnFilterClick, filterPhotos} from './image-filter.js';
-=======
-import './pictures.js';
+
 import './form.js';
 
 renderPictures();
-
 
 // Загрузка фотографий с сервера и их отрисовка.
 getData()
